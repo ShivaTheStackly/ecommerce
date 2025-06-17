@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Us - ShopNow</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f5f7fa;
+      overflow-x: hidden;
+    }
+
+    header {
+      background: linear-gradient(to right, #4facfe, #00f2fe);
+      color: white;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      animation: slideDown 0.8s ease-out;
+    }
+
+    header h2 {
+      margin: 0;
+    }
+
+    nav a {
+      margin-left: 20px;
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #ffe600;
+    }
+
+    .contact-header {
+      background: #00c6ff;
+      color: white;
+      text-align: center;
+      padding: 60px 20px;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    .contact-header h1 {
+      font-size: 42px;
+      margin-bottom: 10px;
+    }
+
+    .contact-header p {
+      font-size: 18px;
+      font-weight: 300;
+    }
+
+    @keyframes slideDown {
+      from { transform: translateY(-100px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(1.05); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(50px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .contact-form-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 60px 20px;
+      animation: fadeUp 1.2s ease-in;
+    }
+
+    .contact-form {
+      width: 100%;
+      max-width: 600px;
+      background: #fff;
+      padding: 35px;
+      border-radius: 16px;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+      animation: fadeIn 1.5s ease;
+    }
+
+    .contact-form label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+      color: #333;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      font-size: 15px;
+      transition: all 0.3s ease;
+    }
+
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      border-color: #00c6ff;
+      box-shadow: 0 0 8px rgba(0,198,255,0.2);
+      outline: none;
+    }
+
+    .contact-form button {
+      background: #00c6ff;
+      color: white;
+      border: none;
+      padding: 12px 30px;
+      border-radius: 25px;
+      font-size: 16px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .contact-form button:hover {
+      background: #0072ff;
+      transform: scale(1.05);
+    }
+
+    .contact-info {
+      text-align: center;
+      margin-top: 50px;
+      animation: fadeIn 1.2s ease;
+      color: #444;
+    }
+
+    .contact-info p {
+      margin-bottom: 8px;
+      font-size: 16px;
+    }
+
+    footer {
+      background: #333;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 60px;
+      font-size: 14px;
+    }
+
+    @media (max-width: 768px) {
+      .contact-header h1 {
+        font-size: 32px;
+      }
+
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      nav {
+        margin-top: 10px;
+      }
+
+      nav a {
+        margin: 0 10px 0 0;
+        display: inline-block;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">
+  <img src="logo-stackly (1).png" alt="ShopNow Logo" style="height: 50px;">
+</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="product.html">Products</a>
+      <a href="About.html">About</a>
+      <a href="Contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <div class="contact-header">
+    <h1>Contact Us</h1>
+    <p>We'd love to hear from you! Get in touch with our team anytime.</p>
+  </div>
+
+  <section class="contact-form-section">
+    <form class="contact-form" onsubmit="return validateForm();">
+      <label for="name">Full Name</label>
+      <input type="text" id="name" placeholder="Your Name" required />
+
+      <label for="email">Email Address</label>
+      <input type="email" id="email" placeholder="you@example.com" required />
+
+      <label for="subject">Subject</label>
+      <input type="text" id="subject" placeholder="Subject of your message" required />
+
+      <label for="message">Message</label>
+      <textarea id="message" rows="5" placeholder="Write your message here..." required></textarea>
+
+      <button type="submit">Send Message</button>
+    </form>
+
+    <div class="contact-info">
+      <p><strong>Email:</strong> support@shopnow.com</p>
+      <p><strong>Phone:</strong> +91 98765 43210</p>
+      <p><strong>Address:</strong> 123 Market Street, Mumbai, India</p>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 ShopNow. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function validateForm() {
+      alert("Thanks for contacting us! We'll get back to you soon.");
+      return false; // Prevent form submission (for demo)
+    }
+  </script>
+
+</body>
+</html>
